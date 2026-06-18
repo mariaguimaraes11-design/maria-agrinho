@@ -1,0 +1,366 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS (CSS) --- */
+        :root {
+            --roxo-principal: #4A154B;
+            --roxo-claro: #6B2D5C;
+            --roxo-suave: #F3EBF5;
+            --verde-sustentavel: #2E7D32;
+            --texto-escuro: #333333;
+            --branco: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER & NAVEGAÇÃO --- */
+        header {
+            background-color: var(--roxo-principal);
+            color: var(--branco);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #A364FF;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #A364FF;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(74, 21, 75, 0.8), rgba(46, 125, 50, 0.7)), 
+                        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=1470') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--branco);
+            padding: 0 1rem;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            background-color: var(--branco);
+            color: var(--roxo-principal);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--roxo-principal);
+            color: var(--branco);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* --- SEÇÕES DE CONTEÚDO --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--roxo-principal);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .main-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--verde-sustentavel);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Dois Pilares: Agro e Familiar */
+        .pilares {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .pilares { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-content h3 {
+            color: var(--roxo-claro);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- SUSTENTABILIDADE & INTERATIVIDADE --- */
+        .sustentabilidade {
+            background-color: var(--roxo-suave);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 2rem;
+        }
+
+        .grid-sustentavel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .grid-sustentavel { grid-template-columns: 1fr; }
+        }
+
+        .info-interativa {
+            background: var(--branco);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--verde-sustentavel);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-btn {
+            background: #e0e0e0;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active {
+            background-color: var(--roxo-principal);
+            color: var(--branco);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--roxo-principal);
+            color: var(--branco);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#pilares">Os Pilares</a></li>
+                    <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1>Agro Forte, Futuro Sustentável</h1>
+        <p>O equilíbrio perfeito entre a alta produtividade do agronegócio, a tradição acolhedora da agricultura familiar e a preservação do nosso meio ambiente.</p>
+        <a href="#pilares" class="btn">Conheça os Pilares</a>
+    </section>
+
+    <main class="container">
+        
+        <section id="pilares">
+            <h2 class="main-title">A Força do Nosso Campo</h2>
+            
+            <div class="pilares">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1592982537447-744077110b90?auto=format&fit=crop&q=80&w=600" alt="Tecnologia no Agronegócio" class="card-img">
+                    <div class="card-content">
+                        <h3>O Agronegócio Tecnológico</h3>
+                        <p>Responsável por abastecer mercados globais e garantir a segurança alimentar em larga escala. Através da tecnologia de precisão, drones, inteligência artificial e análise de dados, o grande agronegócio moderno consegue produzir mais utilizando menos recursos hídricos e otimizando o uso do solo.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&q=80&w=600" alt="Agricultura Familiar" class="card-img">
+                    <div class="card-content">
+                        <h3>A Agricultura Familiar</h3>
+                        <p>A verdadeira base da alimentação do dia a dia. A agricultura familiar foca na diversidade de cultivos, no desenvolvimento comunitário local e na preservação de práticas tradicionais de manejo. É a força humana que traz o alimento fresco do campo diretamente para a mesa de milhões de famílias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sustentabilidade" class="sustentabilidade">
+            <div class="grid-sustentavel">
+                <div>
+                    <h2 style="color: var(--roxo-principal); margin-bottom: 1rem; font-size: 2rem;">O Equilíbrio é o Futuro</h2>
+                    <p style="margin-bottom: 1rem;">Produzir e preservar não são caminhos opostos, mas sim complementares. O futuro do planeta depende de técnicas que protejam a biodiversidade enquanto mantêm o campo forte e ativo.</p>
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=500" alt="Plantação verdejante e sustentável" style="width: 100%; border-radius: 8px; height: 180px; object-fit: cover;">
+                </div>
+
+                <div class="info-interativa">
+                    <h3 style="margin-bottom: 1rem; color: var(--roxo-claro);">Práticas Sustentáveis no Campo</h3>
+                    
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="mudarTab(0)">Rotação de Culturas</button>
+                        <button class="tab-btn" onclick="mudarTab(1)">Bioinsumos</button>
+                        <button class="tab-btn" onclick="mudarTab(2)">Crédito Verde</button>
+                    </div>
+
+                    <div id="tab1" class="tab-content active">
+                        <h4>Preservação do Solo</h4>
+                        <p style="margin-top: 0.5rem;">Alternar espécies de plantas na mesma área ajuda a quebrar ciclos de pragas, melhora os nutrientes naturais da terra e reduz drasticamente a necessidade de fertilizantes químicos sintéticos.</p>
+                    </div>
+
+                    <div id="tab2" class="tab-content">
+                        <h4>Tecnologia Biológica</h4>
+                        <p style="margin-top: 0.5rem;">O uso de defensores biológicos e microrganismos naturais substitui defensivos químicos tradicionais, protegendo a lavoura sem agredir os polinizadores, os lençóis freáticos e a fauna local.</p>
+                    </div>
+
+                    <div id="tab3" class="tab-content">
+                        <h4>Incentivo ao Produtor</h4>
+                        <p style="margin-top: 0.5rem;">Financiamentos e subsídios especiais para produtores de pequeno a grande porte que adotam práticas de baixa emissão de carbono (Agricultura de Baixo Carbono), impulsionando a economia verde.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AgroSustentável. Produzindo com responsabilidade, colhendo o futuro.</p>
+    </footer>
+
+    <script>
+        function mudarTab(index) {
+            // Seleciona todos os conteúdos e botões
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            // Remove a classe active de todos
+            contents.forEach(content => content.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Adiciona a classe active apenas ao que foi clicado
+            contents[index].classList.add('active');
+            buttons[index].classList.add('active');
+        }
+    </script>
+</body>
+</html>
